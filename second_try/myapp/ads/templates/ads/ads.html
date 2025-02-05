@@ -1,0 +1,53 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Объявления{% endblock %}
+{% block content %}
+<h1>Обьявления</h1>
+<form action="" method="GET">
+    {% csrf_token %}
+    <input type="text" name="query">
+    <button type="submit">Найти</button>
+</form>
+
+{% for ad in results %}
+    <div class="ad">
+        <div class="image">
+            {% include 'ads/image.html' %}
+        </div>
+        <div class="info">
+            <div class="title">{{ad.title}}</div>
+            <div class="disctiption">{{ad.discription}}</div>
+            <div class="email">{{ad.email}}</div>
+            <div class="date_of_published">{{ad.date_of_published}}</div>
+            <div class="more">
+                <a href="{% url 'ad' ad.id %}">Подробнее....</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+    {% if ads %}
+        {% for ad in ads %}
+            {% if ad.status %}
+                <div class="ad">
+                    <div class="image">
+                        {% include 'ads/image.html' %}
+                    </div>
+                    <div class="info">
+                        <div class="title">{{ad.title}}</div>
+                        <div class="disctiption">{{ad.discription}}</div>
+                        <div class="email">{{ad.email}}</div>
+                        <div class="date_of_published">{{ad.date_of_published}}</div>
+                        <div class="more">
+                            <a href="{% url 'ad' ad.id %}">Подробнее....</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        {% else %}
+            <h2>Объявления не найдены</h2>
+    {% endif %}
+{% endblock %}

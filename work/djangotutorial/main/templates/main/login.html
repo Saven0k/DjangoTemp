@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+
+{% block title %}
+Авторизация
+{% endblock %}
+
+{% block content %}
+    <div class="form-block">
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="login" placeholder="login">
+            <input type="password" name="password" placeholder="Password">
+            <button>Log in</button>
+        </form>
+            {% if error %}
+                <span>{{error}}</span>
+            {% endif %}
+    </div>
+{% endblock %}

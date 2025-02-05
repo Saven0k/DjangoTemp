@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json</title>
+</head>
+<body>
+    [
+    {% for el in data %}
+        &emsp;{<br>
+            &emsp; &emsp;'title':{{ el.title }},<br>
+            &emsp;&emsp;'discription':{{el.discription}},<br>
+            &emsp;&emsp;'email': {{el.email}},<br>
+            &emsp;&emsp;'categories':{{el.categories}},<br>
+            &emsp;&emsp;'image':{{el.img}},<br>
+        &emsp;}
+    {% endfor %}
+    ]
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+My
+{% endblock %}
+
+{% block content %}
+
+{% if ads %}
+{% for ad in ads %}
+    <div class="ad">
+        <div class="image">
+            {% include 'ads/image.html' %}
+        </div>
+        <div class="info">
+            <div class="title">{{ad.title}}</div>
+            <div class="disctiption">{{ad.discription}}</div>
+            <div class="email">{{ad.email}}</div>
+            <div class="date_of_published">{{ad.date_of_published}}</div>
+         </div>
+    </div>
+{%endfor%}
+{% else %}
+{% endif %}
+{% endblock %}

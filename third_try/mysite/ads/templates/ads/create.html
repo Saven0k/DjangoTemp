@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+{% block title %}Создание объявления{% endblock %}
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.title}}
+        {{form.disc}}
+        {{form.status}}
+        {{form.image}}
+        {{form.email}}
+        {{form.category}}
+        <button>Go</button>
+        {% if error %}
+        {{error}}
+        {% endif %}
+    </form>
+
+{% endblock %}

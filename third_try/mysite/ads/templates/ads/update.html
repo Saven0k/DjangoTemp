@@ -1,0 +1,11 @@
+{% extends 'main/layout.html' %}
+{% block title %}Обновление{% endblock%}
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="title">{{ad.title}}</div>
+    {{form.status}}
+    <button type="submit">Изменить</button>
+</form>
+{% endblock %}

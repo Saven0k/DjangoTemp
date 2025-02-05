@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+{% block title %}{{ad.title}}{% endblock%}
+{% block content %}
+
+<div class="ad">
+    <div class="image">
+        {% include 'main/images.html' %}
+    </div>
+    <div class="title">{{ad.title}}</div>
+    <div class="disc">{{ad.disc}}</div>
+    <div class="email">{{ad.email}}</div>
+    <div class="date">{{ad.date}}</div>
+</div>
+
+{% endblock %}

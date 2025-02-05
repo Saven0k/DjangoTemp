@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="">[</div><br>
+    {% for ad in ads %}
+    <div class="ad">
+        <div class="">{</div><br>
+            <div class="">
+                <p>"id":"{{ad.id}}"</p>
+                <p>"title":"{{ad.title}}"</p>
+                <p>"image":"{{ad.image}}"</p>
+                <p>"disc":"{{ad.disc}}"</p>
+                <p>"email":"{{ad.email}}"</p>
+                <p>"category":"{{ad.category}}"</p>
+            </div>
+        <div class="">}</div><br>
+    </div>
+    {% endfor %}
+
+    <div class="">]</div>
+</body>
+</html>

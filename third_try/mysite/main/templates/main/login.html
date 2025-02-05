@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}
+{% block title %}Вход{% endblock%}
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="text" name="login" placeholder="Email">
+    <input type="password" name="password" placeholder="Password">
+    <button type="submit">Log in</button>
+    {% if error %}
+    <span>{{error}}</span>
+    {% endif %}
+</form>
+
+{% endblock %}
