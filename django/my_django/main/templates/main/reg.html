@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" name="login" placeholder="Email">
+        <input type="password" name="password" placeholder="Пароль">
+        <input type="password" name="password2" placeholder="Пароль(Повтор)">
+        <button type="submit">Регитсрация</button>
+        {% if error %}
+        <span>{{error}}</span>
+        {% endif %}
+    </form>
+
+{% endblock %}

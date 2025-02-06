@@ -1,0 +1,29 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Вход{% endblock %}
+{% block content %}
+<form action="" method="GET">
+    {% csrf_token %}
+    <input type="text" name="querry">
+    <button type="submit">Поиск</button>
+</form>
+{% if ads %}
+    {% for ad in ads %}
+        {% if ad.status %}
+            <div class="ad">
+                <div class="title">{{ad.title}}</div>
+                <div class="disc">{{ad.disc}}</div>
+                <div class="email">{{ad.email}}</div>
+                <div class="more">
+                    <a href="{% url 'ad' ad.id %}">Подробнее..</a>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+{% else %}
+<h2>Пусто</h2>
+{% endif %}
+
+{% endblock %}
+

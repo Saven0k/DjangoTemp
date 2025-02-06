@@ -6,11 +6,11 @@
     {% csrf_token %}
     <input type="text" name="login">
     <input type="password" name="password">
-    <button type="submit" >Войти</button>
+    <input type="password" name="password2">
+    <button type="submit">Go</button>
     {% if error %}
     <span>{{error}}</span>
     {% endif %}
 </form>
-{% endblock %}
 
-^(?=.*[А-ЯЁ])(?=.*[а-яё])(?=.*\d).{8:12}$
+{% endblock %}

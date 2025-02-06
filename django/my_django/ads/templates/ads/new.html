@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+{% block title %}Создание записи{% endblock %}
+
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.title}}
+        {{form.disc}}
+        {{form.img}}
+        {{form.status}}
+        {{form.email}}
+        {{form.category}}
+        <button type="submit">Добавить</button>
+        {% if error %}
+        <span>{{error}}</span>
+        {% endif %}
+    </form>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+{% block title %}Объявления{% endblock %}
+{% block content %}
+
+
+{% if ads %}
+    {% for ad in ads %}
+    <div class="["></div><br>
+        <div class="{"></div><br>
+            <p>"id":"{{ad.title}}"</p>
+            <p>"img":"{{ad.img}}"</p>
+            <p>"title":"{{ad.title}}"</p>
+            <p>"disc":"{{ad.disc}}"</p>
+            <p>"email":"{{ad.email}}"</p>
+            <p>"category":"{{ad.category}}"</p>
+
+        <div class="}"></div><br>
+    <div class="]"></div>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

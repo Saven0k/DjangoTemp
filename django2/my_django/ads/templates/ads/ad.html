@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Вход{% endblock %}
+{% block content %}
+
+<div class="ad">
+    <div class="title">{% include 'main/images.html' %}</div>
+    <div class="title">{{ad.title}}</div>
+    <div class="disc">{{ad.disc}}</div>
+    <div class="email">{{ad.email}}</div>
+    <div class="email">{{ad.date}}</div>
+</div>
+{% endblock %}

@@ -43,6 +43,7 @@ def register(request):
             return render(request, "main/register.html", {'error':error})
         else:
             pattern = r'^(?=.*[А-ЯЁ])(?=.*[а-яё])(?=.*\d).{8,12}$'
+            
             if not re.match(pattern, password):
                 error = "Пароль должен содержать хотя бы одну заглавную и одну строчную русскую букву, а также хотя бы одну цифру. Длина от 8 до 12 символов."
                 return render(request, "main/register.html",  {'error':error})
